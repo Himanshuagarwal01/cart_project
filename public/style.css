@@ -1,5 +1,7 @@
 
-
+body{
+  background-color:rgb(124, 122, 122);
+}
 
 .main{
   max-width: 140rem;
