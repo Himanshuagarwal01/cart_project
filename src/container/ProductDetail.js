@@ -31,10 +31,10 @@ const ProductDetail = () => {
     <div className='ui grid container'>
       {Object.keys(product).length===0?(
         <div>...Loading</div>
-      ):(<div className='ui placeholder segment'>
+      ):(<div className='ui placeholder segment'style={{display:"flex",justifyContent:"center",alignItems:"center",margin:"10vw",height:"58vh"}}>
       <div className='column rp'>
         <div>
-          <img className='ui fluid image' src={image}/>
+          <img className='ui fluid image' src={image} style={{width:"165px"}}/>
         </div>
         <h1>{title}</h1>
         <h2>
