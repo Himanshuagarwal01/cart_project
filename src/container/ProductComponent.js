@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+// This react components is used to return the single browser card of products-------
+
 const  ProductComponent = () => {
   const products=useSelector((state)=>state.allProducts.products);
   const renderList=products.map((ele)=>{

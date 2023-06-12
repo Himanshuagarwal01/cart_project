@@ -1,4 +1,4 @@
-import { actiontypes } from "./actiontypes";
+import { actiontypes } from "../contants/actiontypes";
 
 export const setProduts=(products)=>{
   return{
@@ -11,5 +11,12 @@ export const selectedProduts=(products)=>{
   return{
     type:actiontypes.SELECTED_PRODUCTS,
     payload:products
+  };
+};
+
+export const removeselectedProduts=(products)=>{
+  return{
+    type:actiontypes.REMOVE_SELECTED_PRODUCTS,
+  
   };
 };
