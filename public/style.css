@@ -1,7 +1,4 @@
 
-body{
-  background-color:rgb(124, 122, 122);
-}
 
 .main{
   max-width: 140rem;
@@ -17,4 +14,33 @@ body{
 .products{
   display: flex;
   
+}
+.nav {
+
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  justify-content: space-around;
+  align-items: baseline;
+  display: block;
+  align-content: stretch;
+}
+
+nav{
+  background-color: black;
+
+}
+
+nav ul li {
+display: inline-block;
+padding: 31px;
+
+
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
 }

@@ -25,7 +25,7 @@ useEffect(()=>{
   console.log("Products:",products);
 
   return (
-    <div className=' boss'>
+    <div className='boss'>
      <ProductComponent />
     </div>
   )

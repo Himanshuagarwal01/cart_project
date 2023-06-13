@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectedProduts,removeselectedProduts } from '../redux/actions/productActions';
 
 
+
 const ProductDetail = () => {
   const product=useSelector((state)=>state.product);//this product is coming from the reducer
   const {image,title, price, category,description}=product;
@@ -35,8 +36,8 @@ const ProductDetail = () => {
     <div>
     <div className='ui grid container'>
       {Object.keys(product).length===0?(
-        <div>...Loading</div>
-      ):(<div className='ui placeholder segment'style={{display:"flex",justifyContent:"center",alignItems:"center",margin:"10vw",height:"60vh", width:"60vw"}}>
+        <div >...Loading </div>
+      ):(<div className='ui placeholder segment'style={{display:"flex",justifyContent:"center",alignItems:"center",margin:"10vw",height:"60vh", width:"60vw",}}>
       <div className='column rp'>
         <div>
           <img className='ui fluid image' src={image} style={{width:"165px"}}/>

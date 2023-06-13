@@ -27,7 +27,9 @@ const  ProductComponent = () => {
   })
  
   return (
-   <><div style={{
+   <>
+   
+   <div style={{
     margin:"auto",
     marginRight:"50%",
     marginTop:"10%",
@@ -36,6 +38,7 @@ const  ProductComponent = () => {
     columnGap: "50px",
     rowGap: "50px",
     gridTemplateColumns: "auto auto auto auto",
+    textDecoration:"none",
   }}>{renderList}</div></>
   );
 }
