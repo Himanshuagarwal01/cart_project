@@ -1,26 +1,30 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
+// import React from 'react';
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
   
-} from "react-router-dom";
-import ProductListing from './ProductListing';
-import ProductDetail from './ProductDetail';
+// } from "react-router-dom";
+// import Home from './Home';
+// import ProductListing from './ProductListing';
+// import ProductDetail from './ProductDetail';
 
 
-const Routers = () => {
-  return (
-    <>
-      <Router>
-          <Routes>
-            <Route path="/" Component={ProductListing}/>
-            <Route path="/product/:productId" Component={ProductDetail}/>
-            <Route>404 Not Found</Route>
-          </Routes>
-      </Router>
-      </>
-  )
-}
+// const Routers = () => {
+//   return (
+//     <>
+//       <Router>
+//             <Route path="/" Component={Home}/>
+//             <Route path="/products" component={ProductListing}/>
+//             <Route path="/product/:productId" Component={ProductDetail}/>
+            
+//             <Route>404 Not Found</Route>
+//           <Routes>
 
-export default Routers
+//           </Routes>
+//       </Router>
+//       </>
+//   )
+// }
+
+// export default Routers;

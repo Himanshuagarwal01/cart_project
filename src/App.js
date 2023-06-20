@@ -1,12 +1,19 @@
 import Header from "./container/Header";
-import Routers from "./container/Routers";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 function App() {
   return (
-   <>
-  <Header/>
-  <Routers/>
-   </>
+    <>
+      <Auth0Provider
+        domain="dev-hhprjwsr48p61yre.us.auth0.com"
+        clientId="e4o4df0KYJdUNyYDLeEX7XL2rGdfn6EA"
+        authorizationParams={{
+          redirect_uri: window.location.origin,
+        }}
+      >
+        <Header />
+      </Auth0Provider>
+    </>
   );
 }
 
