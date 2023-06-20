@@ -4,6 +4,8 @@ const initialstate={
   products:[],
 };
 
+// const cart = [];
+
 export const productReducer=(state=initialstate,action)=>{
 switch(action.type){
   case actiontypes.SET_PRODUCTS:
@@ -25,4 +27,8 @@ export const selectedProductReducer=(state={},{type,payload})=>{
       
 
   }
-}
+};
+
+
+
+

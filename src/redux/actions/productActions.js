@@ -20,3 +20,17 @@ export const removeselectedProduts=(products)=>{
   
   };
 };
+
+export const addCart=(products)=>{
+  return{
+    type:actiontypes.ADD_CART,
+    payload:products
+  };
+};
+
+export const deleteCart=(products)=>{
+  return{
+    type:actiontypes.DELETE_CART,
+    payload:products
+  };
+};

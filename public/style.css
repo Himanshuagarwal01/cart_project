@@ -40,7 +40,28 @@ padding: 31px;
 
 }
 
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  align-items: center;
+  margin-bottom: 0;
+  list-style: none;
+}
+
 nav ul li a {
   text-decoration: none;
   color: white;
+}
+
+
+.footer{
+  position: sticky;  
+  margin-top: 0vh;
+width: 100%;  
+background-color: rgb(23, 22, 22);  
+color: white;  
+text-align: center;
+padding-top: 2vh;
+padding-bottom: 2vh;
 }
