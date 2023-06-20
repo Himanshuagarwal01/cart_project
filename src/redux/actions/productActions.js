@@ -21,16 +21,16 @@ export const removeselectedProduts=(products)=>{
   };
 };
 
-export const addCart=(products)=>{
+export const Add=(product)=>{
   return{
-    type:actiontypes.ADD_CART,
-    payload:products
-  };
+      type:actiontypes.ADD_CART,
+      payload:product,
+  }
 };
 
-export const deleteCart=(products)=>{
+export const Remove=(products)=>{
   return{
-    type:actiontypes.DELETE_CART,
-    payload:products
-  };
+      type:actiontypes.ADD_CART,
+      payload:products,
+  }
 };

@@ -1,19 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link, } from "react-router-dom";
-// import { useSelector } from "react-redux";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Home from "./Home";
 import ProductListing from "./ProductListing";
 import ProductDetail from "./ProductDetail";
 import Contact from "./Contact";
 import About from "./About";
 import { useAuth0 } from "@auth0/auth0-react";
-import { AppBar, Button, Toolbar, Typography, Box } from "@mui/material";
-// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { AppBar, Button, Toolbar, Typography, Box , FormControlLabel, Badge} from "@mui/material";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 const Header = () => {
   const { loginWithRedirect, logout,isAuthenticated,user} = useAuth0();
-  // const Cart_len =useSelector((state)=>state.cartreducer.Cart)
+  const Cart_len =useSelector((state)=>state.cartReducer.Cart)
+  console.log(Cart_len);
   return (
     <>
       {/* <Router>
@@ -105,7 +106,7 @@ const Header = () => {
                         </Button>
                       </li>)
                       }
-                       {/* <FormControlLabel sx={{marginLeft:"auto"}}  control={<Link to='/cart' className="link"><Badge badgeContent={Cart_len.length} color="secondary"><ShoppingCartIcon fontSize="large"  sx={{color:"black"}}/></Badge></Link>}/> */}
+                       <FormControlLabel sx={{marginLeft:"auto",color:"white"}}  control={<Link to='/cart' className="link"><Badge badgeContent={Cart_len.length} color="secondary"><ShoppingCartIcon fontSize="large"  sx={{color:"white"}}/></Badge></Link>}/>
                      
                     </ul>
                   </div>

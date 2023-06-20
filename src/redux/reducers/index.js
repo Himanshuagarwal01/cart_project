@@ -1,12 +1,12 @@
 import{combineReducers} from "redux";
 // import handleCart  from "./handleCart";
 import {productReducer,selectedProductReducer} from "./productReducer";
-// import cartreducer from "./cartReducer";
+import {cartreducer} from "./cartReducer";
 
 
 
 const reducers=combineReducers({
-  
+  cartReducer: cartreducer,
   allProducts:productReducer,
   product:selectedProductReducer,
   
