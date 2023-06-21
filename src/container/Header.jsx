@@ -5,6 +5,7 @@ import Home from "./Home";
 import ProductListing from "./ProductListing";
 import ProductDetail from "./ProductDetail";
 import Contact from "./Contact";
+import Showcart from "./Showcart";
 import About from "./About";
 import { useAuth0 } from "@auth0/auth0-react";
 import { AppBar, Button, Toolbar, Typography, Box , FormControlLabel, Badge} from "@mui/material";
@@ -46,7 +47,7 @@ const Header = () => {
         <Box >
           <AppBar>
             <Toolbar>
-              <nav className="navbar navbar-expand-lg navbar-dark bg- fixed-top">
+              <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
                 <div className="container-fluid">
                   <Typography variant="h6" component="div" sx={{ flexGrow: 15 }}>
                     <h1>Combine Store</h1>
@@ -106,7 +107,7 @@ const Header = () => {
                         </Button>
                       </li>)
                       }
-                       <FormControlLabel sx={{marginLeft:"auto",color:"white"}}  control={<Link to='/cart' className="link"><Badge badgeContent={Cart_len.length} color="secondary"><ShoppingCartIcon fontSize="large"  sx={{color:"white"}}/></Badge></Link>}/>
+                       <FormControlLabel sx={{marginLeft:"auto",color:"white"}}  control={<Link to='/cart' className="link"><Badge badgeContent={Cart_len?.length} color="secondary"><ShoppingCartIcon fontSize="large"  sx={{color:"white"}}/></Badge></Link>}/>
                      
                     </ul>
                   </div>
@@ -121,12 +122,13 @@ const Header = () => {
           <Route path="/product/:productId" Component={ProductDetail}></Route>
           <Route path="/product/contactUs" Component={Contact} sx={{margin:"500px"}}></Route>
           <Route path="/product/aboutUs" Component={About}></Route>
+          <Route path="/cart" Component={Showcart}></Route>
         </Routes>
       </Router>
+      <div className="footer" style={{marginBottom:"0px"}}>
+    <p>@Copyright </p>- CombineStore.com All rights Reserved By HIMANSHU AGARWAL
+   </div>
      
-      <div className="footer">
-       <p>@Copyright </p>- CombineStore.com All rights Reserved By HIMANSHU AGARWAL
-      </div>
       
       {/* <Home/>/ */}
     </>

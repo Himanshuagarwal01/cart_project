@@ -42,11 +42,10 @@
 
 const Cart_Products = {
   Cart: [],
-  quantity: 0,
 };
 
 export const cartreducer = (state = Cart_Products, action) => {
-  console.log(action.payload);
+  // console.log("doreamn",action.payload);
   switch (action.type) {
     case "ADD_CART":
       // console.log('action.payload', action.payload);
@@ -60,21 +59,34 @@ export const cartreducer = (state = Cart_Products, action) => {
       });
       // for()
 
-      console.log("ifExits", ifExits);
+      // console.log("ifExits", ifExits);
 
       if (ifExits) {
-        let tempCart = { ...state.Cart, ...action.payload, quantity: 1 };
 
-        tempCart = { ...tempCart, quantity: state.quantity +=tempCart.quantity };
+        const updatedCart = tempCart.map(p =>
+          p.id === action.payload?.id
+            ? { ...p, quantity: p.quantity+1  }
+            : p
+        );
+          console.log('updatedCart',updatedCart);
+          return {Cart:[...updatedCart]};
 
-        console.log("tempCart", tempCart);
+        // let tempCart = { ...state.Cart, ...action.payload, quantity: 1 };
 
+        // tempCart = [{ ...tempCart, quantity: state.quantity +=tempCart.quantity }];
 
+        // console.log("tempCart", tempCart);
 
+        // const tempStateCart = [...tempCart]; 
+
+        // return(updatedCart)
       } else {
-        let tempCart = { ...state.Cart, ...action.payload, quantity: 1 };
-        return tempCart
+        const firstTimeUpdate = {...action.payload,['quantity']:1};
+
+        return {Cart:[...state.Cart,firstTimeUpdate]};
       }
+
+      // console.log('updated final state.Cart',state.Cart);
 
       // console.log('No_cart',No_cart);
 
@@ -84,10 +96,7 @@ export const cartreducer = (state = Cart_Products, action) => {
       // // state.Cart = [...state.Cart, {}];
       // // state.Cart = [...state.Cart, {qnty: state.Cart.qnty+1}];
 
-      return {
-        ...state,
-        Cart: [...state.Cart, action.payload],
-      };
+      
 
     // else {
     //   const inp_qnty = { ...action.payload, qnty: 1 };

@@ -12,7 +12,9 @@ function App() {
         }}
       >
         <Header />
+        
       </Auth0Provider>
+        
     </>
   );
 }

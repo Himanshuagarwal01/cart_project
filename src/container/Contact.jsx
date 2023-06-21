@@ -4,7 +4,7 @@ import { Container } from '@mui/material';
 
 const Contact = () => {
   return (
-    <Container >
+    <Container sx={{marginTop:"50px"}}>
       Contact us :-
       <InstagramIcon/>
     </Container>
