@@ -30,7 +30,7 @@ export const Add=(product)=>{
 
 export const Remove=(products)=>{
   return{
-      type:actiontypes.ADD_CART,
+      type:actiontypes.DELETE_CART,
       payload:products,
   }
 };

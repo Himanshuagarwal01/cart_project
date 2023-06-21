@@ -13,7 +13,7 @@ const ProductDetail = () => {
   const { image, title, price, category, description } = product;
   //useParams hook is used to get the parameters
   const { productId } = useParams();
-  console.log("guwk",productId);
+  console.log("guwk", productId);
   const dispatch = useDispatch();
   // console.log(product);
 
@@ -25,24 +25,13 @@ const ProductDetail = () => {
         console.log(error);
       });
     dispatch(selectedProduts(response.data));
-    // console.log('response.data', response.data);
   };
 
-  
-  // useEffect(() => {
-  //   console.log('product',product);
-  // },[product])
-
-  
   useEffect(() => {
-    if(productId){
+    if (productId) {
       fetchProductDetail();
     }
-    // return () => {
-      //   dispatch(removeselectedProduts());
-    // };
-    // console.log('productId',productId)
-  },[]);
+  }, []);
 
   return (
     <div>

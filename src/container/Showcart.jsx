@@ -54,6 +54,18 @@ const Showcart = () => {
                           </Button>
                         }
                       />
+                        <FormControlLabel
+                        control={
+                          <Button
+                            color="primary"
+                            variant="contained"
+                            sx={{ width: "10vw" }}
+                            onClick={()=>dispatch(Remove(ele))}
+                          >
+                            -
+                          </Button>
+                        }
+                      />
                       
                     </ButtonGroup>
                   </div>
