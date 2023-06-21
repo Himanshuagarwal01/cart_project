@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 // This react components is used to return the single browser card of products-------
 // const filterProduct=(cat)=>{
@@ -38,13 +39,6 @@ const ProductComponent = () => {
 
   return (
     <>
-      {/* <div className='buttons d-flex justify-content-center mb-5 pb-5'>
-    <button className='btn btn-outline-dark md-2' onClick={()=>setFilter(products)}>ALL </button>
-    <button className='btn btn-outline-dark md-2' onClick={()=>filterProduct("men's clothing")}>Men's Clothing</button>
-    <button className='btn btn-outline-dark md-2' onClick={()=>filterProduct("women's clothing")}>Women's Clothing</button>
-    <button className='btn btn-outline-dark md-2' onClick={()=>filterProduct("jewelery")}>jewelery</button>
-    <button className='btn btn-outline-dark md-2' onClick={()=>filterProduct("electronics")}>electronics</button>
-   </div> */}
       <div
         style={{
           margin: "auto",
