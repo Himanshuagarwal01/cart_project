@@ -4,9 +4,9 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectedProduts,
-  removeselectedProduts,
   Add,
 } from "../redux/actions/productActions";
+
 
 const ProductDetail = () => {
   const product = useSelector((state) => state.product); //this product is coming from the reducer
@@ -55,15 +55,17 @@ const ProductDetail = () => {
                 <img
                   className="ui fluid image"
                   src={image}
+                  alt="internet error"
                   style={{ width: "165px" }}
                 />
               </div>
               <h1>{title}</h1>
               <h2>
-                <a className="ui teal tag label">{category}</a>
+                <a href="/products" className="ui teal tag label">{category}</a>
               </h2>
               <p>${price}</p>
               <p>{description}</p>
+
               <button
                 style={{ background: "red", color: "white", height: "6vh" }}
                 onClick={() => {

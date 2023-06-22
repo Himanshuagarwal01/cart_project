@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <>
       <Router>
-        <Box>
+        <Box sx={{maxHeight:"20vh"}}>
           <AppBar>
             <Toolbar>
               <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -70,6 +70,26 @@ const Header = () => {
                       </li>
 
                       {isAuthenticated ? (
+                        <FormControlLabel
+                          sx={{ marginLeft: "auto", color: "white" }}
+                          control={
+                            <Link to="/cart" className="link">
+                              <Badge
+                                badgeContent={Cart_len?.length}
+                                color="secondary"
+                              >
+                                <ShoppingCartIcon
+                                  fontSize="large"
+                                  sx={{ color: "white" }}
+                                />
+                              </Badge>
+                            </Link>
+                          }
+                        />
+                      ) : (
+                        <p></p>
+                      )}
+                      {isAuthenticated ? (
                         <li>
                           <Button
                             color="primary"
@@ -96,22 +116,6 @@ const Header = () => {
                           </Button>
                         </li>
                       )}
-                      <FormControlLabel
-                        sx={{ marginLeft: "auto", color: "white" }}
-                        control={
-                          <Link to="/cart" className="link">
-                            <Badge
-                              badgeContent={Cart_len?.length}
-                              color="secondary"
-                            >
-                              <ShoppingCartIcon
-                                fontSize="large"
-                                sx={{ color: "white" }}
-                              />
-                            </Badge>
-                          </Link>
-                        }
-                      />
                     </ul>
                   </div>
                 </div>
