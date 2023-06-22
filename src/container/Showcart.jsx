@@ -6,6 +6,7 @@ import { Add, Remove } from '../redux/actions/productActions';
 
 const Showcart = () => {
   const data = useSelector((state) => state.cartReducer.Cart);
+  // const [button,setbutton]=React.useState(false);
   const dispatch = useDispatch();
 
   return (
@@ -22,6 +23,10 @@ const Showcart = () => {
         item
       >
         {data.map((ele)=>{
+          //  if(ele.quantity==10){
+          //   setbutton(true)
+          // }
+         
           return(
             <>
              <Grid xs={12} md={6} lg={4} item>
@@ -36,28 +41,17 @@ const Showcart = () => {
                     <p className="card-text">{ele.description.slice(0,100)}</p>
                     <p className="card-text text-center">
                       Price: ${ele.price}{" "}
+                      <br/>
                       <span className="mx-5">Quantity: {ele.quantity}</span>
                     </p>
                     <p>Total: ${ele.quantity*ele.price}</p>
   
                     <ButtonGroup sx={{ mx: "auto", mt: "2rem" }}>
                        {/* mx-->mx means margin-left=auto and margin-right=auto */}
-                      <FormControlLabel
+                       <FormControlLabel
                         control={
                           <Button
-                            color="primary"
-                            variant="contained"
-                            sx={{ width: "10vw" }}
-                            onClick={()=>dispatch(Add(ele))}
-                          >
-                            +
-                          </Button>
-                        }
-                      />
-                        <FormControlLabel
-                        control={
-                          <Button
-                            color="primary"
+                            color="secondary"
                             variant="contained"
                             sx={{ width: "10vw" }}
                             onClick={()=>dispatch(Remove(ele))}
@@ -66,6 +60,40 @@ const Showcart = () => {
                           </Button>
                         }
                       />
+                        {
+                          (ele.quantity===10)?(
+                           
+                          <FormControlLabel
+                            control={
+                              <Button
+                                color="primary"
+                                variant="contained"
+                                disabled
+                                sx={{ width: "10vw" }}
+                                onClick={()=>dispatch(Add(ele))}
+                              >
+                                +
+                              </Button>
+                              
+                            }
+                          />
+                          ):(<FormControlLabel
+                            control={
+                              <Button
+                                color="primary"
+                                variant="contained"
+                                // disabled={button}
+                                sx={{ width: "10vw" }}
+                                onClick={()=>dispatch(Add(ele))}
+                              >
+                                +
+                              </Button>
+                            }
+                          />)
+                        }
+                        
+                      
+                       
                       
                     </ButtonGroup>
                   </div>
