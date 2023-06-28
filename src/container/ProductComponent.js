@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { Add } from "../redux/actions/productActions";
 
 // This react components is used to return the single browser card of products-------
 // const filterProduct=(cat)=>{
@@ -11,6 +13,7 @@ import { Button } from "@mui/material";
 
 const ProductComponent = () => {
   const products = useSelector((state) => state.allProducts.products);
+  const dispatch = useDispatch();
   const renderList = products.map((ele) => {
     const { id, title, image, price, category } = ele;
     return (
@@ -30,6 +33,17 @@ const ProductComponent = () => {
                 <div className="meta price">${price}</div>
                 <div className="meta ">{category}</div>
               </div>
+              <Button
+                sx={{ background: "red", color: "white", height: "6vh" }}
+                // sx={{width:"10px"}}
+                variant="contained"
+                color="secondary"
+                onClick={() => {
+                  dispatch(Add(ele));
+                }}
+              >
+                ADD TO CART
+              </Button>
             </div>
           </div>
         </Link>
