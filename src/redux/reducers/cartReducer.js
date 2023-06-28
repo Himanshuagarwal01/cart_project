@@ -21,7 +21,7 @@ export const cartreducer = (state = Cart_Products, action) => {
         return { Cart: [...updatedCart] };
       } else {
         const firstTimeUpdate = { ...action.payload, ["quantity"]: 1 };
-
+        
         return { Cart: [...state.Cart, firstTimeUpdate] };
       }
 

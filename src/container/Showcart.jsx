@@ -42,7 +42,7 @@ const Showcart = () => {
                     <p className="card-text text-center">
                       Price: ${ele.price}{" "}
                       <br/>
-                      <span className="mx-5">Quantity: {ele.quantity}</span>
+                      <span className="card-text text-center">Quantity: {ele.quantity}</span>
                     </p>
                     <p>Total: ${ele.quantity*ele.price}</p>
   
